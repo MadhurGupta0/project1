@@ -1,5 +1,4 @@
 [app]
-android.permissions = CAMERA
 # (str) Title of your application
 title = FlashlightApp
 
@@ -11,7 +10,7 @@ package.domain = org.example
 
 
 # (str) Source code where the main.py live
-source.dir = .
+source.dir = main.py
 
 # (list) Source files to include (let empty to include all the files)
 source.include_exts = py,png,jpg,jpeg
@@ -43,17 +42,17 @@ requirements.source.python3eggs = git+ssh://github.com/kivy/python-for-android.g
 
 # (list) Application requirements
 # comma separated e.g. requirements = sqlite3,kivy
-requirements = python3,kivy,plyer
+requirements = python3,kivy,plyer,pillow
 
 # (str) Custom source folders for requirements
 # Sets custom source for any requirements with recipes
 # requirements.source.kivy = ../../kivy
 
 # (str) Presplash of the application
-presplash.filename = %(source.dir)s/data/OIP.jpeg
+#presplash.filename = %(source.dir)s/data/OIP.jpeg
 
 # (str) Icon of the application
-icon.filename = %(source.dir)s/data/icon.png
+#icon.filename = %(source.dir)s/data/icon.png
 
 # (list) Supported orientations
 # Valid options are: landscape, portrait, portrait-reverse or landscape-reverse
@@ -101,10 +100,10 @@ fullscreen = 0
 
 # (list) Permissions
 # (See https://python-for-android.readthedocs.io/en/latest/buildoptions/#build-options-1 for all the supported syntaxes and properties)
-#android.permissions = android.permission.INTERNET, (name=android.permission.WRITE_EXTERNAL_STORAGE;maxSdkVersion=18)
+android.permissions = android.permission.CAMERA, (name=android.permission.WRITE_EXTERNAL_STORAGE;maxSdkVersion=18)
 
 # (list) features (adds uses-feature -tags to manifest)
-#android.features = android.hardware.usb.host
+android.features = android.hardware.CAMERA
 
 # (int) Target Android API, should be as high as possible.
 #android.api = 31
